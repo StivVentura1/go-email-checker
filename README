@@ -1,0 +1,68 @@
+Here is a draft for your `README.md` file for the `go-email-checker` repository:
+
+```markdown
+# Go Email Checker
+
+Go Email Checker is a simple program written in Go to check the DNS records of email domains for MX, SPF, and DMARC configurations.
+
+## Introduction
+
+This tool reads domains from standard input and checks for the following DNS records:
+- MX (Mail Exchange) records
+- SPF (Sender Policy Framework) records
+- DMARC (Domain-based Message Authentication, Reporting & Conformance) records
+
+## Installation
+
+1. Make sure you have [Go](https://golang.org/dl/) installed on your machine.
+2. Clone this repository:
+   ```sh
+   git clone https://github.com/StivVentura1/go-email-checker.git
+   ```
+3. Navigate to the project directory:
+   ```sh
+   cd go-email-checker
+   ```
+4. Build the project:
+   ```sh
+   go build -o email-checker main.go
+   ```
+
+## Usage
+
+To use the email checker, run the following command and input the domains you want to check:
+```sh
+./email-checker
+```
+The program will output the results in CSV format:
+```
+domain,hasMX,hasSPF,spfRecord,hasDMARC,dmarcRecord
+```
+
+### Example
+
+```sh
+./email-checker
+example.com
+```
+
+Output:
+```
+example.com,true,true,v=spf1 include:_spf.google.com ~all,true,v=DMARC1; p=none; rua=mailto:dmarc-reports@example.com
+```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+
+## Acknowledgements
+
+Thanks to the developers of Go and the open-source community for their contributions.
+
+```
+
+Feel free to modify it as needed.
